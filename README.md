@@ -15,6 +15,14 @@ const app = (state = appInitialState, action) => reducerMatching(
   [ types.FETCH_USERS_SUCCESS,  fetchUsersSuccess ],
   [ types.FETCH_USERS_FAILURE,  fetchUsersFailure ]
 )(state, action);
+
+function fetchUsersSuccess(state, action) {
+  return {
+    ...state,
+    isFetchingUsers: false,
+    users: action.payload,
+  };
+}
 ```
 
 ## Comming soon:
