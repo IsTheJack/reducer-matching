@@ -1,6 +1,6 @@
 {
   "name": "reducer-matching",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "private": false,
   "description": "A functional redux utility to replace the switch case statement.",
   "main": "lib/reducerMatching.js",
