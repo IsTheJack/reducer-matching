@@ -1,3 +1,13 @@
+/**
+* reducerMatching
+* @class
+* @author Roberto Oliveira
+* @see {@link http://github.com/wouterbulten/kalmanjs}
+* @version 0.5.0
+* @license MIT
+* @preserve
+*/
+
 import {
   append,
   cond,
@@ -13,9 +23,14 @@ import {
   call
 } from 'ramda';
 
-// Array (conditions) -> Object (state) -> Object (action) -> Object (new state)
+/**
+  * A curried function for reducer matching
+  * @param  {Array} ...conditions An array of arrays. The children has the pattern [TYPE, reducer(state, action)]
+  * @param  {Object} state The state of redux
+  * @param  {Object} action The Action of Redux
+  * @return {Object} The new state
+  */
 const reducerMatching = (...conditions) => curry((state, action) => {
-  // * -> Boolean
   const isNotAFunction = value => type(value) !== 'Function';
 
   //  Object|Function -> Object

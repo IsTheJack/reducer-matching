@@ -1,12 +1,21 @@
 {
   "name": "reducer-matching",
   "version": "0.5.0",
+  "private": false,
   "description": "A functional redux utility to replace the switch case statement.",
   "main": "lib/reducerMatching.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "babel --source-maps -d lib/ src/",
-    "prepublish": "npm run compile"
+    "minify": "uglifyjs lib/reducerMaching.js --compress --preamble '//reducerMachingjs, MIT, https://github.com/IsTheJack/reducer-matching' --source-map lib/reducerMaching.min.js.map --in-source-map lib/reducerMaching.js.map --mangle -o lib/reducerMaching.min.js",
+    "prepublish": "npm run compile && npm run minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/IsTheJack/reducer-matching.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IsTheJack/reducer-matching/issues"
   },
   "keywords": [
     "redux",
@@ -24,6 +33,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
-    "babel-preset-es2015": "^6.22.0"
+    "babel-preset-es2015": "^6.22.0",
+    "uglify-js": "^2.7.5"
   }
 }
