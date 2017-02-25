@@ -3,7 +3,7 @@ A functional redux utility to replace the switch case statement.
 
 Get the pattern below as alternative to switch case statement
 
-```JS
+```javascript
 import reducerMatching from 'reducer-matching';
 
 const appInitialState = {};
