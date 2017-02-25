@@ -2,7 +2,7 @@
   "name": "reducer-matching",
   "version": "0.5.0",
   "description": "A functional redux utility to replace the switch case statement.",
-  "main": "index.js",
+  "main": "lib/reducerMatching.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "babel --source-maps -d lib/ src/",

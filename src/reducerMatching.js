@@ -14,7 +14,7 @@ import {
 } from 'ramda';
 
 // Array (conditions) -> Object (state) -> Object (action) -> Object (new state)
-export default const reducerMatching = (...conditions) => curry((state, action) => {
+const reducerMatching = (...conditions) => curry((state, action) => {
   // * -> Boolean
   const isNotAFunction = value => type(value) !== 'Function';
 
@@ -52,3 +52,5 @@ export default const reducerMatching = (...conditions) => curry((state, action) 
 
   return cond(conditionsWithDefaultReturn)(action.type);
 });
+
+export default reducerMatching;
