@@ -23,6 +23,8 @@ function fetchUsersSuccess(state, action) {
     users: action.payload,
   };
 }
+
+// ...
 ```
 
 ## Comming soon:
