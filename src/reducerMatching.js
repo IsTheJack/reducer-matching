@@ -3,7 +3,7 @@
 * @class
 * @author Roberto Oliveira
 * @see {@link https://github.com/IsTheJack/reducer-matching}
-* @version 0.5.3
+* @version 0.5.4
 * @license MIT
 * @preserve
 */

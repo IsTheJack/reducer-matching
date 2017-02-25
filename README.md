@@ -5,7 +5,7 @@ Get the pattern below as alternative to switch case statement.
 
 ## Instalation
 
-The `reducerMatching` is a useful function and can replace the switch statement in the project, assuming a functional posture in the code.
+The `reducerMatching` is an useful function and can replace the switch statement in the project, assuming a functional posture in the code.
 
 ``` npm install --save reducer-matching  ```
 
