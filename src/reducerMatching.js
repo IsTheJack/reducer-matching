@@ -2,8 +2,8 @@
 * reducerMatching
 * @class
 * @author Roberto Oliveira
-* @see {@link http://github.com/wouterbulten/kalmanjs}
-* @version 0.5.0
+* @see {@link https://github.com/IsTheJack/reducer-matching}
+* @version 0.5.3
 * @license MIT
 * @preserve
 */
@@ -20,12 +20,12 @@ import {
   pipe,
   type,
   unless,
-  call
 } from 'ramda';
 
 /**
   * A curried function for reducer matching
-  * @param  {Array} ...conditions An array of arrays. The children has the pattern [TYPE, reducer(state, action)]
+  * @param  {Array} conditions An array of arrays.
+  *         The children has the pattern [TYPE, reducer(state, action)]
   * @param  {Object} state The state of redux
   * @param  {Object} action The Action of Redux
   * @return {Object} The new state
@@ -36,7 +36,7 @@ const reducerMatching = (...conditions) => curry((state, action) => {
   //  Object|Function -> Object
   const callIfIsAFunction = unless(
     isNotAFunction,
-    func => func(state, action)
+    func => func(state, action),
   );
 
   // Array -> String
@@ -54,12 +54,12 @@ const reducerMatching = (...conditions) => curry((state, action) => {
   // Array -> Array
   const byPremiseAndReaction = condition => [
     premise(condition),
-    computeReactionOnlyWhenNecessary(condition)
+    computeReactionOnlyWhenNecessary(condition),
   ];
 
   const mappedConditions = conditions.map(pipe(
     callIfIsAFunction,
-    byPremiseAndReaction
+    byPremiseAndReaction,
   ));
 
   const returnDefault = [T, always(state)];

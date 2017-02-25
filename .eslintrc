@@ -1,0 +1,9 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "no-mult-spaces": 0
+  },
+  "env": {
+    "jest": true
+  }
+}
